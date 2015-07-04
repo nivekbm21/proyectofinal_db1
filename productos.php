@@ -1,26 +1,26 @@
 <?php 
 include('header.php');
 ?>
-<h2>Productos</h2>
-	<?php
+<h2>Producto</h2>
+<?php
+	$Codigo= htmlspecialchars($_GET["codigo"]);
 	include"conexion.php";
-	$query=msql_query("query_realizar")or die(msql_error());
-	while($f=msql_fetch_array($query)){
-	?>
+	if(empty($Codigo)){
+		$query = sqlsrv_query($conn,"select Codigo_Producto,Nombre,Cod_Categoria,Foto_Principal From Producto where Estado=1;");
+	}else{
+		$query = sqlsrv_query($conn,"select Codigo_Producto,Nombre,Cod_Categoria,Foto_Principal From Producto where Cod_Categoria=".$Codigo." and Estado=1;");
+	}
+	
+	while ($row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )) {
+?>
 		<div class="producto">
-			<img src="img/producto/<?php echo $f['nombre de campo de imagen'];?>" alt="producto">
-			<br><spa><?php echo $f['nombre de articulo'];?></spa></br>
-			<a href="detalle.php"></a>
+			<img src="img/productos/<?php echo $row['Foto_Principal'];?>" alt="producto">
+			<br><spa><?php echo $row['Nombre'];?></spa></br>
+			<a href="detalle.php?Codigo_Producto=<?php echo $row['Codigo_Producto'];?>">Ver Productos</a>
 		</div>
 	<?php
 		}
 	?>
-		<div class="producto">
-			<img src="img/ejemplo.jpg" alt="producto">
-			<br><spa>Prueba</spa></br>
-			<a href="detalle.php"></a>
-		</div>
-
 <?php 
 include('footer.php');
 ?>

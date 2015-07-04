@@ -1,13 +1,17 @@
-<?php
-$serverName = "PRUEBAS_CIC\SQLEXPRESS"; //serverName\instanceName
-$connectionInfo = array( "Database"=>"carrito_compra", "UID"=>"carrito", "PWD"=>"carrito2015");
-$conn = sqlsrv_connect( $serverName, $connectionInfo);
-
-$query = sqlsrv_query($conn,"SELECT * FROM Categoria");
-
-
-while ($row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )) {
-	print_r($row);
-}
-
+<?php 
+include('header.php');
 ?>
+<h2>Producto</h2>
+<?php
+
+
+$Codigo= htmlspecialchars($_GET["codigo"]);
+echo $Codigo;
+
+	include"conexion.php";
+	//$query = sqlsrv_query($conn,"select Codigo_Producto,Nombre,Cod_Categoria,Foto_Principal From Producto where Cod_Categoria=".$Codigo." and Estado=1;");
+?>
+<?php 
+include('footer.php');
+?>
+	
