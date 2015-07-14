@@ -16,7 +16,7 @@ include('header.php');
 		<div class="producto">
 			<img src="img/productos/<?php echo $row['Foto_Principal'];?>" alt="producto">
 			<br><spa><?php echo $row['Nombre'];?></spa></br>
-			<a href="detalle.php?Codigo_Producto=<?php echo $row['Codigo_Producto'];?>">Ver Productos</a>
+			<a href="detalle.php?codigoProducto=<?php echo $row['Codigo_Producto'];?>">Ver Productos</a>
 		</div>
 	<?php
 		}
