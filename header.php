@@ -22,11 +22,13 @@
           </li>
           
           <li><a href="categorias.php">Categorias</a></li>
-          <li><a href="#">Cont&aacute;ctenos</a></li>
+          <li><a href="contactenos.php">Cont&aacute;ctenos</a></li>
           <li><a href="#">Mi Cuenta</a>
+            <ul>
             <li><a href="login.php">Ingresar</a></li>
             <li><a href="login.php">Cerrar Seccion</a></li>
-              <li><a href="#">Mi Carrito de Compras</a></li>
+              <li><a href="carritoCompras.php">Mi Carrito de Compras</a></li>
+              </ul>
           </li>
         </ul>
       </div>

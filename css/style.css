@@ -23,6 +23,16 @@ h3 {
 	margin-top:15px;
 	font-weight:bold;
 }
+#carritoCompras{
+	padding: 4px;
+	float: right;
+	border: 1px solid black;
+}
+.detalle{
+	padding:10px;
+	width: 60px;
+	background-color: white;
+}
 
 #header {
 	height: 60px;

@@ -8,7 +8,7 @@ include('header.php');
    $query1 = sqlsrv_query($conn,"select Codigo, Nombre From Marca");
 ?>
 
-<form action="insertarBD/insertarProductoDB.php" method="post"/>
+<form action="scriptBD/insertarProductoDB.php" method="post"/>
 <table>
    <tr>
    	<td>Nombre:</td>

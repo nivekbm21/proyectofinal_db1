@@ -20,7 +20,17 @@ $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )
 <div>
 	Galeria
 </div>
+
+<form action="scriptBD/insertarCarritoCompras.php?codigoProducto=<?php echo $row['Codigo_Producto'];?>&precio=<?php echo $row['Precio'];?>" method="post" id="carritoCompras"/>
+<table>
+   <tr>
+   	<td class="detalle">Cantidad:</td>
+   	<td class="detalle"><input type="number" min="0" max="1000000000" name="cantidad"/></td>
+   </tr>
+   <tr><td class="detalle"><input type="submit" value="Insertar Producto"></td></tr>
+</table>
 	
+</form>
 			<table>
 				<tr>
 					<th>Codigo de Producto:</th>
