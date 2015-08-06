@@ -1,5 +1,6 @@
 <?php 
-include('header.php');
+  include ('header.php');
+    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') {
 ?>
 <h2>Ingreso de Producto</h2>
 <?php
@@ -74,6 +75,9 @@ include('header.php');
    <input type="reset" value="borrar todo"></p>
 </form>
 
-<?php 
+<?php
+}
+else{
+  header('Location: login.php');}
 include('footer.php');
 ?>

@@ -24,9 +24,9 @@ session_start();
           <li><a href="productos.php">Productos</a>
             <ul>
               <?php 
-                if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '6') { ?>
+                if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') { ?>
                   <li><a href="agregarProducto.php">Agregar Producto</a></li>
-                  <li><a href="#">Item 2</a></li>
+                  <li><a href="carga-masiva-Productos.php">Carga Masiva</a></li>
                 <?php }
                 else{?>
               <?php } ?>

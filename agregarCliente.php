@@ -1,6 +1,7 @@
 <?php 
-include ('header.php');
- ?>
+	include ('header.php');
+    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') {
+?>
 
 <h2>Cliente</h2>
 <?php
@@ -53,8 +54,9 @@ include ('header.php');
 </form>
 
 
-<?php  
-
+<?php
+}
+else{
+	header('Location: login.php');}
 include('footer.php');
-
 ?>

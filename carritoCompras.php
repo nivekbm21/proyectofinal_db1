@@ -1,5 +1,6 @@
 <?php 
-include('header.php');
+	include ('header.php');
+    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') {
 ?>
 <h2>Mi Carrito de Compras</h2>
 
@@ -39,6 +40,9 @@ include('header.php');
 	<input type="submit" action="index.php" value="Cotizacion">
 </form>
 
-<?php 
+<?php
+}
+else{
+	header('Location: login.php');}
 include('footer.php');
- ?>
+?>
