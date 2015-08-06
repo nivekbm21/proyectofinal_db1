@@ -3,34 +3,42 @@ include('header.php');
 ?>
 <h2>Mi Carrito de Compras</h2>
 
-<table>
+<table id="carritoCompras">
 	<tr>
-		<th>Nombre de Producto</th>
-		<th>Cantidad</th>
-		<th>Precio por Unidad</th>
-		<th>Precio por Producto</th>
+		<th class="carritocomprascolum">Nombre de Producto</th>
+		<th class="carritocomprascolum">Cantidad</th>
+		<th class="carritocomprascolum">Precio por Unidad</th>
+		<th class="carritocomprascolum">Precio por Producto</th>
 	</tr>
 <?php
 	include"conexion.php";
 
-	$query = sqlsrv_query($conn,"SELECT Codigo_Cliente,Codigo_Producto,Cantidad_Producto,Precio,total FROM Carrito_Compras where Codigo_Cliente =".$Codigo);
-	$total = sqlsrv_query($conn,"SELECT sum(total) FROM Carrito_Compras where Codigo_Cliente =".$Codigo);
-	$row1 = sqlsrv_fetch_array( $total, SQLSRV_FETCH_ASSOC )
+	$query = sqlsrv_query($conn,"consultaCarrito");
+
+	$total = sqlsrv_query($conn,"SELECT sum(Total) as Total FROM Carrito_Compras");
+	$row1 = sqlsrv_fetch_array( $total, SQLSRV_FETCH_ASSOC );
 	while ($row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )) {
 ?>
 	<tr>
-		<td><?php echo $row['Codigo_Producto'];?></td>
-		<td><?php echo $row['Cantidad'];?></td>
-		<td><?php echo $row['Precio'];?></td>
-		<td><?php echo $row['total'];?></td>
+		<td class="carritocomprascolum"><?php echo $row['Nombre'];?></td>
+		<td class="carritocomprascolum"><?php echo $row['Cantidad_Producto'];?></td>
+		<td class="carritocomprascolum"><?php echo $row['Precio'];?></td>
+		<td class="carritocomprascolum"><?php echo $row['Total'];?></td>
 	</tr>
 
 <?php } ?>
 <tr>
-	<th colspan="3">Total:</th>
-	<td><?php echo $row1['total'];?></td>
+	<th colspan="3" class="carritocomprascolum">Total:</th>
+	<td class="carritocomprascolum"><?php echo $row1['Total'];?></td>
 </tr>
 </table>
+<form action="index.php">
+	<input type="submit" action="index.php" value="Confirmar Compra">
+</form>
+<form action="index.php">
+	<input type="submit" action="index.php" value="Cotizacion">
+</form>
+
 <?php 
 include('footer.php');
  ?>

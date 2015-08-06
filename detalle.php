@@ -21,7 +21,7 @@ $row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )
 	Galeria
 </div>
 
-<form action="scriptBD/insertarCarritoCompras.php?codigoProducto=<?php echo $row['Codigo_Producto'];?>&precio=<?php echo $row['Precio'];?>" method="post" id="carritoCompras"/>
+<form action="scriptBD/insertarCarritoCompras.php?codigoProducto=<?php echo $row['Codigo_Producto'];?>&precio=<?php echo $row['Precio'];?>" method="post" id="carritoComprasdetalle"/>
 <table>
    <tr>
    	<td class="detalle">Cantidad:</td>
