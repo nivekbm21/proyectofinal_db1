@@ -11,7 +11,7 @@ include('header.php');
 		$query = sqlsrv_query($conn,"SELECT Codigo_Producto,Caracteristica,Nombre,Precio,Descripcion,Existencia,Cod_Marca,Cod_Categoria,Foto_Principal FROM Producto where Codigo_Producto=".$codigo_pro." and Estado=1");
 		
 	}
-$row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC )
+$row = sqlsrv_fetch_array( $query, SQLSRV_FETCH_ASSOC );
 
 
 	?>

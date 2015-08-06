@@ -9,7 +9,7 @@ include('header.php');
 ?>
 
 <form action="scriptBD/insertarProductoDB.php" method="post"/>
-<table>
+<table class=table-bordered>
    <tr>
    	<td>Nombre:</td>
    	<td><input type="text" name="nombre"/></td>

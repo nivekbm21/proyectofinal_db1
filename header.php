@@ -1,11 +1,18 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <title><?php echo $title;?></title>
 
-<link href="css/style.css" rel="stylesheet" type="text/css">
+
 <script type="text/javascript" src="js/jquery.js"></script>
 <script type="text/javascript" src="js/submenu.js"></script>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -16,8 +23,13 @@
           <li><a href="index.php">Inicio</a></li>
           <li><a href="productos.php">Productos</a>
             <ul>
-              <li><a href="agregarProducto.php">Agregar Producto</a></li>
-              <li><a href="#">Item 2</a></li>
+              <?php 
+                if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '6') { ?>
+                  <li><a href="agregarProducto.php">Agregar Producto</a></li>
+                  <li><a href="#">Item 2</a></li>
+                <?php }
+                else{?>
+              <?php } ?>
             </ul>
           </li>
           
@@ -25,9 +37,18 @@
           <li><a href="contactenos.php">Cont&aacute;ctenos</a></li>
           <li><a href="#">Mi Cuenta</a>
             <ul>
-            <li><a href="login.php">Ingresar</a></li>
-            <li><a href="login.php">Cerrar Seccion</a></li>
-              <li><a href="carritoCompras.php">Mi Carrito de Compras</a></li>
+            
+
+            <?php 
+                if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1') { ?>
+                  <li><a href="cerrar-Sesion.php">Cerrar Seccion</a></li>
+                  <li><a href="carritoCompras.php">Mi Carrito de Compras</a></li>
+            <?php }
+                else{?>
+                  <li><a href="login.php">Ingresar</a></li>
+            <?php } ?>
+
+
               </ul>
           </li>
         </ul>
