@@ -1,6 +1,6 @@
 <?php 
 	include ('header.php');
-    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') {
+    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '1') {
 ?>
 
 <h2>Carga de Archivos. <small>Cargar Productos Masivamente</small></h2>

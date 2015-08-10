@@ -12,7 +12,7 @@
 		}
 		else{
 			session_start();
-			$_SESSION['codigo'] = $usuario["codigo"];
+			$_SESSION['codigo'] = $usuario["Codigo"];
 			$_SESSION['Nombre'] = $usuario["Nombre"];
 			$_SESSION['Primer_Apellido'] = $usuario["Primer_Apellido"];
 			$_SESSION['Segundo_Apellido'] = $usuario["Segundo_Apellido"];

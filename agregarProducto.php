@@ -1,6 +1,6 @@
 <?php 
   include ('header.php');
-    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '4') {
+    if (isset($_SESSION['Estado']) && $_SESSION['Estado'] == '1' && $_SESSION['Rol'] == '2') {
 ?>
 <h2>Ingreso de Producto</h2>
 <?php
@@ -9,8 +9,12 @@
    $query1 = sqlsrv_query($conn,"select Codigo, Nombre From Marca");
 ?>
 
-<form action="scriptBD/insertarProductoDB.php" method="post"/>
+<form action="../scriptBD/valid-agregar-producto.php" class="form-horizontal" method="POST" enctype="multipart/form-data">
 <table class=table-bordered>
+  <tr>
+    <td>ID:</td>
+    <td><input type="text" name="Codigo_Producto"/></td>
+   </tr>
    <tr>
    	<td>Nombre:</td>
    	<td><input type="text" name="nombre"/></td>
@@ -66,7 +70,8 @@
    <tr>
       <td>Imagen Principal:</td>
       <td>
-         <input type="file" name="fotoPrincipal">
+         
+         <input type="file" class="form-control-imagen" id="imagen" name="imagen">
       </td>
    </tr>
 </table>
